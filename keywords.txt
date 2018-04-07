@@ -1,0 +1,3 @@
+Strober		KEYWORD1
+setNotes	KEYWORD2
+play		KEYWORD2
