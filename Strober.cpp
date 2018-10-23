@@ -55,18 +55,25 @@ void Strober::setNotes(uint16_t* notes, size_t notes_size)
 {
   if (notes_ != notes)
   {
+    reset();
     notes_ = notes;
     notes_size_ = notes_size;
     timer_.reset();
   }
 }
 
+void Strober::reset() 
+{
+   index_ = 0; 
+   timer_.reset();
+}
+
 void Strober::setNotes(Notes notes)
 {
   if (curr_notes_ != notes)
   {
+    reset();
     curr_notes_ = notes;
-    timer_.reset();
     switch (notes)
     {
       case BLINK_SLOW:
