@@ -50,6 +50,7 @@ public:
   void play();
   void setNotes(uint16_t* notes, size_t notes_size);
   void setNotes(Notes notes);
+  void reset();
 
   const static size_t SLOW_BLINK_SIZE = 4;
   const static size_t FAST_BLINK_SIZE = 4;
