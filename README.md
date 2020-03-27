@@ -7,9 +7,9 @@ Strober depends on SandTimer library to operate. SandTimer library can be found 
 
 ## Usage
 1. Include Strober.h in your code 
-2. Create new Strober instance. e.g.
+2. Create new Strober instance with LED argument. e.g.
 ```
-Strober strober;
+Strober strober(13);
 ```
 
 3. Set initial led notes. e.g.
@@ -26,7 +26,7 @@ void setup()
 ```
 void loop()
 {
-  strober.play(INDICATOR_LED);
+  strober.play();
   ...
   ...
   if (x)
