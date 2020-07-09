@@ -62,7 +62,6 @@ private:
   uint16_t* notes_;
   size_t notes_size_ = 0;
   uint16_t index_ = 0;
-  Notes curr_notes_;
 
   const static uint16_t SLOW_BLINK_ARR[SLOW_BLINK_SIZE];
   const static uint16_t FAST_BLINK_ARR[FAST_BLINK_SIZE];

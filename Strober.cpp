@@ -70,26 +70,24 @@ void Strober::reset()
 
 void Strober::setNotes(Notes notes)
 {
-  if (curr_notes_ != notes)
+  uint16_t * selected_notes = nullptr;
+  size_t selected_notes_size = 0;
+  switch (notes)
   {
-    reset();
-    curr_notes_ = notes;
-    switch (notes)
-    {
-      case BLINK_SLOW:
-        notes_ = (uint16_t*)SLOW_BLINK_ARR;
-        notes_size_ = SLOW_BLINK_SIZE;
-        break;
-      case BLINK_FAST:
-        notes_ = (uint16_t*)FAST_BLINK_ARR;
-        notes_size_ = FAST_BLINK_SIZE;
-        break;
-      case STROBE:
-        notes_ = (uint16_t*)STROBE_BLINK_ARR;
-        notes_size_ = STROBE_BLINK_SIZE;
-        break;
-    }
+    case BLINK_SLOW:
+      selected_notes = (uint16_t*)SLOW_BLINK_ARR;
+      selected_notes_size = SLOW_BLINK_SIZE;
+      break;
+    case BLINK_FAST:
+      selected_notes = (uint16_t*)FAST_BLINK_ARR;
+      selected_notes_size = FAST_BLINK_SIZE;
+      break;
+    case STROBE:
+      selected_notes = (uint16_t*)STROBE_BLINK_ARR;
+      selected_notes_size = STROBE_BLINK_SIZE;
+      break;
   }
+  setNotes(selected_notes, selected_notes_size);
 }
 
 /**************************************************************
